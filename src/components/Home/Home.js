@@ -9,13 +9,13 @@ import {
   Row,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import useAuth from "../../context/useAuth";
 import Meals from "../Meals/Meals";
-import useFirebase from "../../hooks/useFirebase";
 
 const Home = () => {
   const [searchText, setSearchText] = useState("");
   const [meals, setMeals] = useState([]);
-  const { user, logOut } = useFirebase();
+  const { user, logOut } = useAuth();
 
   useEffect(() => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;

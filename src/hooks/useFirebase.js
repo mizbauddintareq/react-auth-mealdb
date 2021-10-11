@@ -17,14 +17,9 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   const handleGoogleLogin = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        setUser(result.user);
-        console.log(result.user);
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+    return signInWithPopup(auth, googleProvider).catch((error) => {
+      setError(error.message);
+    });
   };
 
   const logOut = () => {

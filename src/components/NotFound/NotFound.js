@@ -1,28 +1,38 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import { Button, Card, Row } from "react-bootstrap";
+import "./NotFound.css";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
-  const history = useHistory();
-
-  const clickhandler = () => {
-    history.push("/");
-  };
   return (
-    <div className="text-center">
-      <Row xs={1} md={3} className="g-0">
-        <Card className="mx-auto text-danger">
-          <Card.Header>Error alert!!!</Card.Header>
-          <Card.Body>
-            <Card.Title>404</Card.Title>
-            <Card.Text>Opp!! Page Not Fond</Card.Text>
-            <Button onClick={clickhandler} variant="danger">
-              Back To Home
-            </Button>
-          </Card.Body>
-        </Card>
-      </Row>
-    </div>
+    <section className="page_404">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-12 ">
+            <div className="col-sm-10 col-sm-offset-1 mx-auto">
+              <div className="four_zero_four_bg mx-auto">
+                <h1 className="text-center text-danger ">404</h1>
+              </div>
+
+              <div className="contant_box_404 text-center text-danger">
+                <h3 className="h2">Look like you're lost</h3>
+
+                <p>the page you are looking for not avaible!</p>
+
+                <Button
+                  as={Link}
+                  to="/"
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Back To Home
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
